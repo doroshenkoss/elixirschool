@@ -1,5 +1,5 @@
 ---
-version: 1.0.1
+version: 1.0.2
 title: Pattern Matching
 redirect_from:
   - /lessons/basics/pattern-matching/
@@ -97,4 +97,8 @@ iex> greet.("Hello", "Sean")
 "Hi Sean"
 iex> greet.("Mornin'", "Sean")
 "Mornin', Sean"
+iex> greeting
+"Hello"
 ```
+
+Note in the `"Mornin'"` example that the reassignment of `greeting` to `"Mornin'"` only happens inside the function. Outside of the function `greeting` is still `"Hello"`.
