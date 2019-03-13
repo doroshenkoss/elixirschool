@@ -1,8 +1,6 @@
 ---
 version: 1.0.1
 title: Protocols
-redirect_from:
-  - /lessons/advanced/protocols/
 ---
 
 In this lesson we are going to look at Protocols, what they are, and how we use them in Elixir.
@@ -109,6 +107,7 @@ iex> to_atom(%{foo: "bar"})
 :foo
 ```
 
-It is worth it to note, that although underneath structs are Maps, they do not share protocol implementations with Maps. They are not enumerable, they cannot be accessed.
+It is worth it to note, that although underneath structs are Maps, they do not share protocol implementations with Maps.
+They are not enumerable, they cannot be accessed.
 
 As we can see, protocols are a powerful way to achieve polymorphism.

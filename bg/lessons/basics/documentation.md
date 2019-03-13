@@ -1,5 +1,5 @@
 ---
-version: 0.9.1
+version: 0.9.2
 title: Документация
 ---
 
@@ -131,6 +131,7 @@ $ mix new greet_everyone
 
 * creating README.md
 * creating .gitignore
+* creating .formatter.exs
 * creating mix.exs
 * creating config
 * creating config/config.exs
@@ -202,11 +203,11 @@ View them at "doc/index.html".
 
 Ако всичко е минало по план, би трябвало да виждате подобно съобщение, като примера по-горе. Нека погледнем в нашия Mix проект и би трябвало да видим, че има друга директория **doc/**. Вътре е нашата генерирана документация. Ако отворим index страницата в нашия браузър, би трябвало да видим следното:
 
-![ExDoc Screenshot 1]({% asset_path "documentation_1.png" %})
+![ExDoc Screenshot 1]({% asset documentation_1.png @path %})
 
 Можем да видим, че Earmark е конвертирал нашия Markdown и ExDoc го показва в полезен формат.
 
-![ExDoc Screenshot 2]({% asset_path "documentation_2.png" %})
+![ExDoc Screenshot 2]({% asset documentation_2.png @path %})
 
 Сега можем да качим това в Github, нашият website, или [HexDocs](https://hexdocs.pm/).
 

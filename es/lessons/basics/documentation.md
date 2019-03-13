@@ -1,5 +1,5 @@
 ---
-version: 1.0.1
+version: 1.0.2
 title: Documentación
 ---
 
@@ -46,7 +46,7 @@ defmodule Greeter do
 end
 ```
 
-Nosotros (u otros) podemos acceder a esta documentación usando la función de ayuda `h` dentro de IEx. 
+Nosotros (u otros) podemos acceder a esta documentación usando la función de ayuda `h` dentro de IEx.
 
 ```elixir
 iex> c("greeter.ex")
@@ -132,6 +132,7 @@ $ mix new greet_everyone
 
 * creating README.md
 * creating .gitignore
+* creating .formatter.exs
 * creating mix.exs
 * creating config
 * creating config/config.exs
@@ -204,11 +205,11 @@ View them at "doc/index.html".
 
 Si todo fue de acuerdo al plan, deberías ver un mensaje similar al mensaje de salida del anterior ejemplo. Ahora vamos a ver dentro de nuestro proyecto Mix y deberíamos ver que hay otro directorio llamado **docs/**. Dentro está nuestra documentación generada. Si visitamos la página indice(index.html) en nuestro navegador deberíamos ver los siguiente:
 
-![ExDoc Screenshot 1]({% asset_path "documentation_1.png" %})
+![ExDoc Screenshot 1]({% asset documentation_1.png @path %})
 
 Podemos ver que Earmark ha renderizado nuestro Markdown y ExDoc y ahora lo muestra en un formato útil.
 
-![ExDoc Screenshot 2]({% asset_path "documentation_2.png" %})
+![ExDoc Screenshot 2]({% asset documentation_2.png @path %})
 
 Ahora podemos desplegar esto a GitHub, a nuestro propio sitio web, o mas comunmente a [HexDocs](https://hexdocs.pm/).
 

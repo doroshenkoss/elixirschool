@@ -1,8 +1,6 @@
 ---
 version: 1.1.1
 title: Control Structures
-redirect_from:
-  - /lessons/basics/control-structures/
 ---
 
 In this lesson we will look at the control structures available to us in Elixir.
@@ -11,7 +9,8 @@ In this lesson we will look at the control structures available to us in Elixir.
 
 ## `if` and `unless`
 
-Chances are you've encountered `if/2` before, and if you've used Ruby you're familiar with `unless/2`.  In Elixir they work much the same way but they are defined as macros, not language constructs. You can find their implementation in the [Kernel module](https://hexdocs.pm/elixir/Kernel.html).
+Chances are you've encountered `if/2` before, and if you've used Ruby you're familiar with `unless/2`.
+In Elixir they work much the same way but they are defined as macros, not language constructs. You can find their implementation in the [Kernel module](https://hexdocs.pm/elixir/Kernel.html).
 
 It should be noted that in Elixir, the only falsey values are `nil` and the boolean `false`.
 
@@ -68,7 +67,8 @@ iex> case :even do
 
 Consider `_` as the `else` that will match "everything else".
 
-Since `case/2` relies on pattern matching, all of the same rules and restrictions apply.  If you intend to match against existing variables you must use the pin `^/1` operator:
+Since `case/2` relies on pattern matching, all of the same rules and restrictions apply.
+If you intend to match against existing variables you must use the pin `^/1` operator:
 
 ```elixir
 iex> pie = 3.14
@@ -82,7 +82,7 @@ iex> case "cherry pie" do
 
 Another neat feature of `case/2` is its support for guard clauses:
 
-_This example comes directly from the official Elixir [Getting Started](http://elixir-lang.org/getting-started/case-cond-and-if.html#case) guide._
+_This example comes directly from the official Elixir [Getting Started](https://elixir-lang.org/getting-started/case-cond-and-if.html#case) guide._
 
 ```elixir
 iex> case {1, 2, 3} do
@@ -100,7 +100,7 @@ Check the official docs for [Expressions allowed in guard clauses](https://hexdo
 
 When we need to match conditions rather than values we can turn to `cond/1`; this is akin to `else if` or `elsif` from other languages:
 
-_This example comes directly from the official Elixir [Getting Started](http://elixir-lang.org/getting-started/case-cond-and-if.html#cond) guide._
+_This example comes directly from the official Elixir [Getting Started](https://elixir-lang.org/getting-started/case-cond-and-if.html#cond) guide._
 
 ```elixir
 iex> cond do
@@ -114,7 +114,8 @@ iex> cond do
 "But this will"
 ```
 
-Like `case/2`, `cond/1` will raise an error if there is no match.  To handle this, we can define a condition set to `true`:
+Like `case/2`, `cond/1` will raise an error if there is no match.
+To handle this, we can define a condition set to `true`:
 
 ```elixir
 iex> cond do

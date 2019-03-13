@@ -1,8 +1,6 @@
 ---
-version: 1.0.1
+version: 1.0.2
 title: Mix
-redirect_from:
-  - /jp/lessons/basics/mix/
 ---
 
 私たちがElixirの深海へと潜れるようになる前に、まずmixについて学ぶ必要があります。Rubyに詳しければ、mixとはBundlerとRubyGems、そしてRakeが組み合わさったものです。あらゆるElixirプロジェクトに欠かせない部分であり、このレッスンではその素晴らしい機能のうち、ほんの一部を探検していきます。mixが提供する全ての機能を知るには`mix help`を実行してください。
@@ -24,6 +22,7 @@ $ mix new example
 ```bash
 * creating README.md
 * creating .gitignore
+* creating .formatter.exs
 * creating mix.exs
 * creating config
 * creating config/config.exs

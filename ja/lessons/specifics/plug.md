@@ -1,8 +1,6 @@
 ---
-version: 1.1.2
+version: 1.2.0
 title: Plug
-redirect_from:
-  - /jp/lessons/specifics/plug/
 ---
 
 Rubyをよくご存知なら、PlugはところどころSinatraの面影をもつRackだと考えることができます。
@@ -125,10 +123,10 @@ Hello World!
 
 多くのWebサイトやREST APIなどのアプリケーションのように、リクエストをパスやHTTP関数によって制御するルーターが欲しくなるでしょう。そのため`Plug`はルーターを備えています。ElixirにはPlugがあるので、Sinatraのようなフレームワークは必要ありません。
 
-手始めに、`lib/plug/router.ex`というファイルを作り、以下をコピーしましょう:
+手始めに、`lib/example/router.ex`というファイルを作り、以下をコピーしましょう:
 
 ```elixir
-defmodule Example.Plug.Router do
+defmodule Example.Router do
   use Plug.Router
 
   plug(:match)
@@ -165,7 +163,7 @@ end
 
 Note: Plugは全てのリクエストにおいて適用されます。そのため、リクエストのフィルタリングはそれらのサブセットにのみ適用します。無視するためには単純にconnectionを引き渡します。
 
-出来上がったPlugからどのように動くか説明していきます。`lib/plug/verify_request.ex`を作りましょう。
+出来上がったPlugからどのように動くか説明していきます。`lib/example/plug/verify_request.ex`を作りましょう。
 
 ```elixir
 defmodule Example.Plug.VerifyRequest do

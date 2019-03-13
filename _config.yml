@@ -1,7 +1,6 @@
 # Setup
-baseurl: /
 url: https://elixirschool.com
-permalink: /blog/articles/:title/
+permalink: /blog/:title/
 default_lang: en
 exclude_from_localization: []
 exclude_from_chapters: ['blog.html', 'contributors.html']
@@ -48,11 +47,11 @@ sitemap:
   priority_name: 'priority'
 
 elixir:
-  version: 1.5.2
+  version: 1.8
 
 erlang:
-  OTP: 20
-  erts: 9.1
+  OTP: 21.1
+  erts: 10.1
 
 defaults:
   -

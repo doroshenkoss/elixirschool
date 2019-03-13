@@ -1,110 +1,422 @@
-authors:
-  - username: doomspork
-    lessons: Project creator
-  - username: ybur-yug
-    lessons: IEx Helpers, Protocols
-  - username: Koziolek
-    lessons: Debugging
-  - username: devonestes
-    lessons: Benchee
-  - username: hassox
-    lessons: Guardian
+# INSTRUCTIONS
+# add your github profile, and contributions. See details below.
+#
+# github: (required), name:, twitter:, homepage:, intro:
+# contributions: lesson, blog, translation, developer (required)
+# lessons: list contributed lesson names (required if applicable)
+# articles: list of titles from contributed blog articles (required if applicable)
+# translations: list of locales translated (required if applicable)
 
-developers:
-  - doomspork
-  - nscyclone
-  - Koziolek
-  - burden
-  - eksperimental
+- github: doomspork
+  name: Sean Callan
+  intro:
+    Sean has been passionately involved with Elixir since the very beginning.
+    After experiencing the joys of working with Elixir he created Elixir School and has become a core contributor to numerous libraries.
+    During the day, Sean help companies transition teams and codebases to Elixir.
+  twitter: doomspork
+  homepage: https://seancallan.com
+  contributions:
+    - lesson
+    - developer
+    - blog
+  lessons: ['Project creator']
+  articles:
+    - A look at Elixir 1.6
+    - Just the beginning
+    - Configuration Demystified
+    - Ecto query composition
+    - 'Umbrellas: only when it rains?'
 
-translators:
-  - language: bg
-    users:
-      - merkata
+- github: gemantzu
+  name: George Mantzouranis
+  intro:
+    George is a software engineer based in Greece who's initial foray into Elixir brought him to Elixir School where he led the translation to Greek.
+    Since joining the team he developed a number of the translation focused features to include the translation report.
+    Being on the learning path, he also decided to contribute back to the community by reviewing the material he uses each time.
+  homepage:
+  twitter: gemantzu
+  contributions:
+    - translator
+    - blog
+  languages:
+    - gr
+  articles:
+    - Reviewing Elixir in Action, Second Edition
+    - Reviewing Functional Web Development with Elixir, OTP, and Phoenix
 
-  - language: bn
-    users:
-      - masnun
+- github: notactuallypagemcconnell
+  name: Bobby Grayson
+  intro:
+  homepage:
+  twitter: yburyug
+  contributions:
+    - lesson
+    - blog
+  lessons:
+    - IEx Helpers
+    - Protocols
+  articles:
+    - Agnostic Version Management With asdf
 
-  - language: cn
-    users:
-      - cizixs
+- github: Koziolek
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - lesson
+    - translator
+    - developer
+  languages:
+    - pl
+  lessons:
+    - Debugging
 
-  - language: tw
-    users:
-      - lithiumpie
-      - cizixs
+- github: devonestes
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - lesson
+  lessons:
+    - Benchee
 
-  - language: de
-    users:
-      - Lechindianer
+- github: hassox
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - lesson
+  lessons:
+    - Guardian
 
-  - language: es
-    users:
-      - erickgnavar
-      - milmazz
+- github: nscyclone
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - developer
+    - translator
+  languages:
+    - ru
 
-  - language: fr
-    users:
-      - julienXX
+- github: burden
+  name: burden
+  intro:
+  homepage: https://burden.cc
+  twitter: cheapexcitement
+  contributions:
+    - developer
 
-  - language: gr
-    users:
-      - gemantzu
+- github: eksperimental
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - developer
 
-  - language: id
-    users:
-      - rezaprima
+- github: masnun
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - bn
 
-  - language: it
-    users:
-      - lucidstack
+- github: merkata
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - bg
 
-  - language: ja
-    users:
-      - 3100
-      - marocchino
-      - riseshia
+- github: cizixs
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - zh-hant
+    - zh-hans
 
-  - language: ko
-    users:
-      - devleoper
+- github: julienXX
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - fr
 
-  - language: "no"
-    users:
-      - Devalo
+- github: Lechindianer
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - de
 
-  - language: pl
-    users:
-      - Koziolek
+- github: rezaprima
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - id
 
-  - language: ru
-    users:
-      - brain-geek
-      - nscyclone
+- github: 3100
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - ja
 
-  - language: sk
-    users:
-      - michalvalasek
+- github: marocchino
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - ja
 
-  - language: ta
-    users:
-      - kalarani
+- github: riseshia
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - ja
 
-  - language: th
-    users:
-      - iboss-ptk
+- github: lucidstack
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - it
 
-  - language: tr
-    users:
-      - ismailunal
-      - yasinyaman
+- github: devleoper
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - ko
 
-  - language: uk
-    users:
-      - brain-greek
-      - doroshenkoss
+- github: Devalo
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - "no"
 
-  - language: vi
-    users:
-      - joneslee85
+- github: brain-geek
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - ru
+    - uk
+
+- github: michalvalasek
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - sk
+
+- github: erickgnavar
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - es
+
+- github: milmazz
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - es
+
+- github: kalarani
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - ta
+
+- github: iboss-ptk
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - th
+
+- github: lithiumpie
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - zh-hant
+
+- github: ismailunal
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - tr
+
+- github: yasinyaman
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - tr
+
+- github: doroshenkoss
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - uk
+
+- github: joneslee85
+  name:
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - vi
+
+- github: svileng
+  name: Svilen Gospodinov
+  intro:
+    Svilen is co-founder & CTO at Heresy, where he uses Elixir, Phoenix and the OTP to build and scale the product and services.
+    Whenever he gets a chance, he tries to give back to the open source community by working on open source, giving talks, writing articles and helping beginners.
+  twitter: svileng
+  homepage: https://s2g.io
+  contributions:
+    - translator
+    - blog
+  languages:
+    - en
+    - bg
+  articles:
+    - A brief guide to Ecto.Multi
+
+- github: SophieDeBenedetto
+  name: Sophie DeBenedetto
+  intro:
+    Sophie is an engineer and teacher at The Flatiron School. She loves teaching and learning and finding the Elixir School community felt like the perfect fit!
+  twitter: sm_debenedetto
+  homepage: https://thegreatcodeadventure.com
+  contributions:
+    - lesson
+    - blog
+  lessons: ['OTP Distribution', 'Plug']
+  articles:
+    - JWT Auth in Elixir with Joken
+
+- github: alexgriff
+  name: Alex Griffith
+  intro:
+    Alex is an engineer and teacher at the Flatiron School.
+  twitter:
+  homepage:
+  contributions:
+    - blog
+  lessons: ['Testing']
+  articles:
+    - ExUnit's capture_log option
+
+- github: ktravers
+  name: Kate Travers
+  intro:
+    Kate is an engineer at the Flatiron School.
+  twitter: kttravers
+  homepage: https://kate-travers.com/
+  contributions:
+    - blog
+
+- github: zillou
+  name: Derrick Zhang
+  intro:
+  homepage:
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - zh-hans
+
+- github: kenspirit
+  name: Ken Chen
+  intro:
+  homepage: http://thinkingincrowd.me
+  twitter:
+  contributions:
+    - translator
+  languages:
+    - zh-hans

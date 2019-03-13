@@ -1,5 +1,5 @@
 ---
-version: 1.2.0
+version: 1.3.0
 title: Módulos
 ---
 
@@ -77,29 +77,29 @@ Vamos criar algumas structs:
 
 ```elixir
 iex> %Example.User{}
-%Example.User{name: "Sean", roles: []}
+#Example.User<name: "Sean", roles: [], ...>
 
 iex> %Example.User{name: "Steve"}
-%Example.User{name: "Steve", roles: []}
+#Example.User<name: "Steve", roles: [], ...>
 
-iex> %Example.User{name: "Steve", roles: [:admin, :owner]}
-%Example.User{name: "Steve", roles: [:admin, :owner]}
+iex> #Example.User<name: "Steve", roles: [...], ...>
+#Example.User<name: "Steve", roles: [...], ...>
 ```
 
 Podemos atualizar nosso struct apenas como se fosse um mapa:
 
 ```elixir
-iex> steve = %Example.User{name: "Steve", roles: [:admin, :owner]}
-%Example.User{name: "Steve", roles: [:admin, :owner]}
+iex> steve = #Example.User<name: "Steve", roles: [...], ...>
+#Example.User<name: "Steve", roles: [...], ...>
 iex> sean = %{steve | name: "Sean"}
-%Example.User{name: "Sean", roles: [:admin, :owner]}
+#Example.User<name: "Sean", roles: [...], ...>
 ```
 
 Mais importante, você pode associar estruturas contra mapas:
 
 ```elixir
 iex> %{name: "Sean"} = sean
-%Example.User{name: "Sean", roles: [:admin, :owner]}
+#Example.User<name: "Sean", roles: [...], ...>
 ```
 
 ## Composição
@@ -148,7 +148,7 @@ end
 
 ### `import`
 
-Se queremos importar funções e macros em vez de criar pseudônimos de um módulo, podemos usar `import/`:
+Se queremos importar funções em vez de criar pseudônimos de um módulo, podemos usar `import`:
 
 ```elixir
 iex> last([1, 2, 3])
@@ -193,7 +193,7 @@ import List, only: :macros
 
 ### `require`
 
-Embora usadas com menos frequência, `require/2` não deixa de ser importante. Exigindo que um módulo seja compilado e carregado. Isso é mais útil quando precisamos acessar macros de um módulo:
+Nós podemos usar `require` para dizer ao Elixir que vamos usar macros de outro módulo. A pequena diferença com `import` é que ele permite usar macros, mas não funções do módulo especificado.
 
 ```elixir
 defmodule Example do

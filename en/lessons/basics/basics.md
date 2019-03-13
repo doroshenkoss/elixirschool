@@ -1,8 +1,6 @@
 ---
-version: 1.1.2
+version: 1.2.1
 title: Basics
-redirect_from:
-  - /lessons/basics/basics/
 ---
 
 Getting started, basic data types, and basic operations.
@@ -79,7 +77,6 @@ iex> 1.0e-10
 1.0e-10
 ```
 
-
 ### Booleans
 
 Elixir supports `true` and `false` as booleans; everything is truthy except for `false` and `nil`:
@@ -93,7 +90,8 @@ false
 
 ### Atoms
 
-An atom is a constant whose name is its value. If you're familiar with Ruby, these are synonymous with Symbols:
+An atom is a constant whose name is its value.
+If you're familiar with Ruby, these are synonymous with Symbols:
 
 ```elixir
 iex> :foo
@@ -148,13 +146,15 @@ iex> "foo\nbar"
 "foo\nbar"
 ```
 
-Elixir also includes more complex data types.  We'll learn more about these when we learn about [collections](../collections/) and [functions](../functions/).
+Elixir also includes more complex data types.
+We'll learn more about these when we learn about [collections](../collections/) and [functions](../functions/).
 
 ## Basic Operations
 
 ### Arithmetic
 
-Elixir supports the basic operators `+`, `-`, `*`, and `/` as you would expect.  It's important to remember that `/` will always return a float:
+Elixir supports the basic operators `+`, `-`, `*`, and `/` as you would expect.
+It's important to remember that `/` will always return a float:
 
 ```elixir
 iex> 2 + 2
@@ -178,7 +178,8 @@ iex> rem(10, 3)
 
 ### Boolean
 
-Elixir provides the `||`, `&&`, and `!` boolean operators. These support any types:
+Elixir provides the `||`, `&&`, and `!` boolean operators.
+These support any types:
 
 ```elixir
 iex> -20 || true
@@ -212,6 +213,8 @@ iex> not 42
 ** (ArgumentError) argument error
 ```
 
+Note: Elixir's `and` and `or` actually map to `andalso` and `orelse` in Erlang.
+
 ### Comparison
 
 Elixir comes with all the comparison operators we're used to: `==`, `!=`, `===`, `!==`, `<=`, `>=`, `<`, and `>`.
@@ -236,7 +239,7 @@ iex> 2 === 2.0
 false
 ```
 
-An important feature of Elixir is that any two types can be compared; this is particularly useful in sorting.  We don't need to memorize the sort order, but it is important to be aware of it:
+An important feature of Elixir is that any two types can be compared; this is particularly useful in sorting. We don't need to memorize the sort order, but it is important to be aware of it:
 
 ```elixir
 number < atom < reference < function < port < pid < tuple < map < list < bitstring

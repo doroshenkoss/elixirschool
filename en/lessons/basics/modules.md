@@ -1,17 +1,17 @@
 ---
-version: 1.2.0
+version: 1.4.0
 title: Modules
-redirect_from:
-  - /lessons/basics/modules/
 ---
 
-We know from experience it's unruly to have all of our functions in the same file and scope.  In this lesson we're going to cover how to group functions and define a specialized map known as a struct in order to organize our code more efficiently.
+We know from experience it's unruly to have all of our functions in the same file and scope.
+In this lesson we're going to cover how to group functions and define a specialized map known as a struct in order to organize our code more efficiently.
 
 {% include toc.html %}
 
 ## Modules
 
-Modules allow us to organize functions into a namespace. In addition to grouping functions, they allow us to define named and private functions which we covered in the [functions lesson](../functions/).
+Modules allow us to organize functions into a namespace.
+In addition to grouping functions, they allow us to define named and private functions which we covered in the [functions lesson](../functions/).
 
 Let's look at a basic example:
 
@@ -45,7 +45,8 @@ iex> Example.Greetings.morning "Sean"
 
 ### Module Attributes
 
-Module attributes are most commonly used as constants in Elixir.  Let's look at a simple example:
+Module attributes are most commonly used as constants in Elixir.
+Let's look at a simple example:
 
 ```elixir
 defmodule Example do
@@ -57,7 +58,8 @@ defmodule Example do
 end
 ```
 
-It is important to note there are reserved attributes in Elixir.  The three most common are:
+It is important to note there are reserved attributes in Elixir.
+The three most common are:
 
 + `moduledoc` — Documents the current module.
 + `doc` — Documentation for functions and macros.
@@ -65,7 +67,9 @@ It is important to note there are reserved attributes in Elixir.  The three most
 
 ## Structs
 
-Structs are special maps with a defined set of keys and default values.  A struct must be defined within a module, which it takes its name from.  It is common for a struct to be the only thing defined within a module.
+Structs are special maps with a defined set of keys and default values.
+A struct must be defined within a module, which it takes its name from.
+It is common for a struct to be the only thing defined within a module.
 
 To define a struct we use `defstruct` along with a keyword list of fields and default values:
 
@@ -79,34 +83,68 @@ Let's create some structs:
 
 ```elixir
 iex> %Example.User{}
-%Example.User{name: "Sean", roles: []}
+#Example.User<name: "Sean", roles: [], ...>
 
 iex> %Example.User{name: "Steve"}
-%Example.User{name: "Steve", roles: []}
+#Example.User<name: "Steve", roles: [], ...>
 
-iex> %Example.User{name: "Steve", roles: [:admin, :owner]}
-%Example.User{name: "Steve", roles: [:admin, :owner]}
+iex> #Example.User<name: "Steve", roles: [...], ...>
+#Example.User<name: "Steve", roles: [...], ...>
 ```
 
 We can update our struct just like we would a map:
 
 ```elixir
-iex> steve = %Example.User{name: "Steve", roles: [:admin, :owner]}
-%Example.User{name: "Steve", roles: [:admin, :owner]}
+iex> steve = #Example.User<name: "Steve", roles: [...], ...>
+#Example.User<name: "Steve", roles: [...], ...>
 iex> sean = %{steve | name: "Sean"}
-%Example.User{name: "Sean", roles: [:admin, :owner]}
+#Example.User<name: "Sean", roles: [...], ...>
 ```
 
 Most importantly, you can match structs against maps:
 
 ```elixir
 iex> %{name: "Sean"} = sean
-%Example.User{name: "Sean", roles: [:admin, :owner]}
+#Example.User<name: "Sean", roles: [...], ...>
 ```
+
+As of Elixir 1.8 structs include custom introspection.
+To understand what this means and how we are to use it let us inspect our `sean` capture:
+
+```elixir
+iex> inspect(sean)
+"#Example.User<name: \"Sean\", roles: [...], ...>"
+```
+
+All of our fields are present which is okay for this example but what if we had a protected field we didn't want to include?
+The new `@derive` feature let's us accomplish just this!
+Let's update our example so `roles` are no longer included in our output:
+
+```elixir
+defmodule Example.User do
+  @derive {Inspect, only: [:name]}
+  defstruct name: nil, roles: []
+end
+```
+
+_Note_: we could also use `@derive {Inspect, except: [:roles]}`, they are equivalent.
+
+With our updated module in place let's take a look at what happens in `iex`:
+
+```elixir
+iex> sean = #Example.User<name: "Sean", roles: [...], ...>
+#Example.User<name: "Sean", ...>
+iex> inspect(sean)
+"#Example.User<name: \"Sean\", ...>"
+```
+
+The `roles` are excluded from output!
+
 
 ## Composition
 
-Now that we know how to create modules and structs let's learn how to add existing functionality to them via composition.  Elixir provides us with a variety of different ways to interact with other modules.
+Now that we know how to create modules and structs let's learn how to add existing functionality to them via composition.
+Elixir provides us with a variety of different ways to interact with other modules.
 
 ### `alias`
 
@@ -150,7 +188,7 @@ end
 
 ### `import`
 
-If we want to import functions and macros rather than aliasing the module we can use `import/`:
+If we want to import functions rather than aliasing the module we can use `import`:
 
 ```elixir
 iex> last([1, 2, 3])
@@ -165,7 +203,8 @@ iex> last([1, 2, 3])
 
 By default all functions and macros are imported but we can filter them using the `:only` and `:except` options.
 
-To import specific functions and macros, we must provide the name/arity pairs to `:only` and `:except`.  Let's start by importing only the `last/1` function:
+To import specific functions and macros, we must provide the name/arity pairs to `:only` and `:except`.
+Let's start by importing only the `last/1` function:
 
 ```elixir
 iex> import List, only: [last: 1]
@@ -195,7 +234,8 @@ import List, only: :macros
 
 ### `require`
 
-Although used less frequently `require/2` is nonetheless important.  Requiring a module ensures that it is compiled and loaded.  This is most useful when we need to access a module's macros:
+We could use `require` to tell Elixir you're going to use macros from other module.
+The slight difference with `import` is that it allows using macros, but not functions from the specified module:
 
 ```elixir
 defmodule Example do

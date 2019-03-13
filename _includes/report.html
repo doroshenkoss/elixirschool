@@ -12,7 +12,7 @@
         <th>{{ headers['original_version'] }}</th>
         <th>{{ headers['translation_version'] }}</th>
         <th>{{ headers['version_severity'] }}</th>
-        <th></th>
+        <th>{{ headers['last_commit'] }}</th>
       </tr>
     </thead>
     <tbody>
@@ -21,13 +21,25 @@
         {% for lesson in section[1] %}
         <tr>
           <td>{{ site.data['locales'][page['lang']]['sections'][title] }}</td>
-          <td><a href ="/en/lessons/{{title}}/{{lesson[1]['chapter']}}">{{ lesson[1]['lesson'] }}</a></td>
-          <td>{{ lesson[1]['translated_title'] }}</td>
+          <td><a href="{{ lesson[1]['url'] }}" title="{{ lesson[1]['lesson'] }}">{{ lesson[1]['lesson'] }}</a></td>
+          <td>
+              {% unless lesson[1]['translated_severity'] == 'missing' %}
+                <a href="{{ lesson[1]['translated_url'] }}" title="{{ lesson[1]['translated_title'] }}">{{ lesson[1]['translated_title'] }}</a>
+              {% endunless %}
+          </td>
           <td>{{ lesson[1]['original_version'] }}</td>
           <td>{{ lesson[1]['translated_version'] }}</td>
-          <td>{{ lesson[1]['version_severity'] }}</td>
-          <td class="version-cell">
+          <td class="version-cell" title="{{ lesson[1]['translated_severity'] }}">
             <div class="version-difference-indicator version-difference-{{ lesson[1]['version_severity'] }}"></div>
+          </td>
+          <td>
+              {% if lesson[1]['last_commit'] == '' %}
+              {% else %}
+              <a class="icon" href="{{ lesson[1]['last_commit'] }}">
+                  <i class="fab fa-github-square"></i>
+                  <span class="label">{{ headers['last_commit'] }}</span>
+              </a>
+              {% endif %}
           </td>
         </tr>
         {% endfor %}

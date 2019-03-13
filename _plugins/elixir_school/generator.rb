@@ -36,7 +36,7 @@ module ElixirSchool
 
       site.pages.each do |page|
         next if site.config['exclude_from_chapters'].include? page.name
-        lang    = get_lang_from_url(site, page.url)
+        lang = page.data['lang'] || get_lang_from_url(site, page.url)
         section = get_section_from_url(site, page.url)
         chapter_name = get_chapter_from_url(site, page.url)
 
@@ -90,7 +90,7 @@ module ElixirSchool
 
       # last pass to define page.data['leaf']
       site.pages.each do |page|
-        next if site.config['exclude_from_chapters'].include? page.name
+        next if site.config['exclude_from_chapters'].include?(page.name) or page.data['layout']['redirect']
         lang = page.data['lang']
         section = page.data['section']
         chapter_name = page.data['chapter']
@@ -193,8 +193,8 @@ module ElixirSchool
     def interlang_names(site, original_lang, separator)
       names = {}
       languages(site).each do |lang|
-        original_lang_name = site.data['interlang'].dig(original_lang, lang)
-        foreign_lang_name = site.data['interlang'].dig(lang, lang)
+        original_lang_name = site.data['locales'][original_lang].dig('interlang', lang)
+        foreign_lang_name = site.data['locales'][lang].dig('interlang', lang)
 
         if original_lang_name and foreign_lang_name and original_lang_name != foreign_lang_name
           combined_lang_name = "#{original_lang_name}#{separator}#{foreign_lang_name}"

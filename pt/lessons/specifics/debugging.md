@@ -17,7 +17,7 @@ O [Dialyxir](https://github.com/jeremyjh/dialyxir) é uma tarefa mix para simpli
 
 Ferramentas de especificação como o Dialyzer ajudam a enteder melhor o código. Este é um exemplo do que é legível e compreensível apenas para outros seres humanos (se apenas existe e é bem escrito), `@spec` usar sintaxe mais formal e que pode ser entendido pela máquina.
 
-Vamos adicionar Dialixyr ao nosso projeto. A maneira mais simples é adicionar dependência ao arquivo `mix.exs`:
+Vamos adicionar Dialyxir ao nosso projeto. A maneira mais simples é adicionar dependência ao arquivo `mix.exs`:
 
 ```elixir
 defp deps do
@@ -133,11 +133,11 @@ O modulo `:int` é um intérprete que nos dá a capacidade de criar pontos de in
 
 Quando você inicia o depurador, você verá uma nova janela como esta:
 
-![Debugger Screenshot 1]({% asset_path "debugger_1.png" %})
+![Debugger Screenshot 1]({% asset debugger_1.png @path %})
 
 Depois de ter anexado o nosso módulo para o depurador estará disponível no menu à esquerda:
 
-![Debugger Screenshot 2]({% asset_path "debugger_2.png" %})
+![Debugger Screenshot 2]({% asset debugger_2.png @path %})
 
 ## Criando breakpoints
 
@@ -161,11 +161,11 @@ iex > Example.cpu_burns(1, 1, 1)
 
 A execução será pausada no IEx e a janela do depurador deverá ter esta aparência:
 
-![Debugger Screenshot 3]({% asset_path "debugger_3.png" %})
+![Debugger Screenshot 3]({% asset debugger_3.png @path %})
 
 Aparecerá uma janela adicional com o nosso código fonte:
 
-![Debugger Screenshot 4]({% asset_path "debugger_4.png" %})
+![Debugger Screenshot 4]({% asset debugger_4.png @path %})
 
 Nesta janela, podemos procurar o valor das variáveis, avançar para a próxima linha ou avaliar expressões. `:int.disable_break/2` pode ser chamado para desabilitar um breakpoint:
 
