@@ -1,5 +1,5 @@
 ---
-version: 1.4.0
+version: 1.4.2
 title: Enum
 ---
 
@@ -29,8 +29,7 @@ at/3
 ```
 
 Using this, it's clear that we have a vast amount of functionality, and that is for a clear reason.
-Enumeration is at the core of functional programming and is an incredibly useful thing.
-By leveraging it combined with other perks of Elixir, such as documentation being a first class citizen as we just saw, it can be incredibly empowering to the developer as well.
+Enumeration is at the core of functional programming, and combined with other perks of Elixir it can be incredibly empowering for developers.
 
 For a full list of functions visit the official [`Enum`](https://hexdocs.pm/elixir/Enum.html) docs; for lazy enumeration use the [`Stream`](https://hexdocs.pm/elixir/Stream.html) module.
 
@@ -141,7 +140,7 @@ iex> Enum.max([5, 3, 0, -1])
 `max/2` is to `max/1` what `min/2` is to `min/1`:
 
 ```elixir
-Enum.max([], fn -> :bar end)
+iex> Enum.max([], fn -> :bar end)
 :bar
 ```
 
@@ -174,7 +173,7 @@ iex> Enum.reduce(["a","b","c"], "1", fn(x,acc)-> x <> acc end)
 
 Sorting our collections is made easy with not one, but two, sorting functions.
 
-`sort/1` uses Erlang's term ordering to determine the sorted order:
+`sort/1` uses Erlang's [term ordering](http://erlang.org/doc/reference_manual/expressions.html#term-comparisons) to determine the sorted order:
 
 ```elixir
 iex> Enum.sort([5, 6, 1, 3, -1, 4])

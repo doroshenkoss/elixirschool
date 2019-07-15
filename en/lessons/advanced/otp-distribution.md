@@ -1,5 +1,5 @@
 ---
-version: 1.0.0
+version: 1.0.1
 title: OTP Distribution
 ---
 
@@ -11,7 +11,7 @@ Elixir allows us to communicate across these nodes via a few different mechanism
 
 ## Communication Between Nodes
 
-Elixir runs on the Erlang VM, which means it has access to to Erlang's powerful [distribution functionality.](http://erlang.org/doc/reference_manual/distributed.html)
+Elixir runs on the Erlang VM, which means it has access to Erlang's powerful [distribution functionality.](http://erlang.org/doc/reference_manual/distributed.html)
 
 > A distributed Erlang system consists of a number of Erlang runtime systems communicating with each other.
 Each such runtime system is called a node.
@@ -31,9 +31,9 @@ iex --sname kate@localhost
 iex(kate@localhost)>
 ```
 
-These two nodes can send messages to one another using `Node.spawn_link/1`.
+These two nodes can send messages to one another using `Node.spawn_link/2`.
 
-### Communicating with `Node.spawn_link/1`
+### Communicating with `Node.spawn_link/2`
 
 This function takes in two arguments:
 * The name of the node to which you want to connect
@@ -73,7 +73,7 @@ So, since our `alex` node is the one from which we called `spawn_link/2`, that n
 
 #### Responding to Messages
 
-What if we want the node that receives the message to send some *response* back to the sender? We can use a simple `receive/1` and [`send/2`](https://hexdocs.pm/elixir/Process.html#send/3) setup to accomplish exactly that.
+What if we want the node that receives the message to send some *response* back to the sender? We can use a simple `receive/1` and [`send/3`](https://hexdocs.pm/elixir/Process.html#send/3) setup to accomplish exactly that.
 
 We'll have our `alex` node spawn a link to the `kate` node and give the `kate` node an anonymous function to execute.
 That anonymous function will listen for the receipt of a particular tuple describing a message and the PID of the `alex` node.
@@ -171,7 +171,7 @@ This can be passed in as a tuple of `{SupervisorName, remote_node_name}` in orde
 You can pass in a fifth, optional argument describing shutdown options.
 We won't worry about that here.
 
-Out Chat application is pretty simple.
+Our Chat application is pretty simple.
 It sends messages to remote nodes and remote nodes respond to those messages by `IO.puts`-ing them out to the STDOUT of the remote node.
 
 First, let's define a function, `Chat.receive_message/1`, that we want our task to execute on a remote node.

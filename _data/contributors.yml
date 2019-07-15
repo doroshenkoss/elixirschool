@@ -210,6 +210,16 @@
   languages:
     - ja
 
+- github: starfish719
+  name:
+  intro:
+  homepage: https://starfish719.netlify.com/
+  twitter: starfish0206
+  contributions:
+    - translator
+  languages:
+    - ja
+
 - github: lucidstack
   name:
   intro:
@@ -391,6 +401,18 @@
   lessons: ['Testing']
   articles:
     - ExUnit's capture_log option
+
+- github: maxcell
+  name: Prince Wilson
+  intro:
+    Prince is an teacher over at the Flatiron School. He enjoys sharing knowledge with people as he learns new things!
+    Finding ways to create accessible, impactful content to developers out there is his jam.
+  twitter: maxcell
+  homepage: https://maxcell.me/
+  contributions:
+    - blog
+  articles:
+    - TIL Ecto Constraints and Validations
 
 - github: ktravers
   name: Kate Travers

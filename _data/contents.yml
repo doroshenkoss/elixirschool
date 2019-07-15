@@ -33,6 +33,7 @@ advanced:
   - behaviours
   - gen-stage
   - protocols
+  - nerves
 ecto:
   - basics
   - changesets
@@ -50,3 +51,4 @@ libraries:
   - benchee
   - bypass
   - distillery
+  - stream-data
